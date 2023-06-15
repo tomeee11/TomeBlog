@@ -1,13 +1,10 @@
 const mongoose = require("mongoose");
 
-const postsSchema = new mongoose.Schema({
-  postsId: {
+const commentsSchema = new mongoose.Schema({
+  postId: {
     type: String,
   },
   user: {
-    type: String,
-  },
-  title: {
     type: String,
   },
   createdAt: {
@@ -19,7 +16,7 @@ const postsSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-  },
+  }
 });
 
-module.exports = mongoose.model("Posts", postsSchema);
+module.exports = mongoose.model("Comments", commentsSchema);

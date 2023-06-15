@@ -8,9 +8,10 @@ connect()
 
 // // Router 미들웨어를 사용하겠다고 작성합니다 (미들웨어를 없이 body로 전달 받은 JSON 데이터는 바로 사용할 수 없다)
 const postsRouter = require("./routes/posts.js");
+const CommentsRouter = require("./routes/comments.js");
 app.use(express.json());
 // localhost:3000/api -> Router
-app.use("/api", [postsRouter]);
+app.use("/", [postsRouter,CommentsRouter]);
 
 
 
@@ -19,3 +20,5 @@ app.use("/api", [postsRouter]);
 app.listen(port, () => {
   console.log(port, "포트로 서버가 열렸어요!");
 });
+
+
