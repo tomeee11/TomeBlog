@@ -4,22 +4,22 @@ const postsSchema = new mongoose.Schema({
   postsId: {
     type: String,
   },
-  user: {
+  userId: {
     type: String,
   },
   title: {
     type: String,
   },
-  createdAt: {
-    type: Date,
+  nickname: {
+    type: String,
   },
   content: {
     type: String,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-});
+},
+{
+  timestamps:true
+}
+);
 
 module.exports = mongoose.model("Posts", postsSchema);
