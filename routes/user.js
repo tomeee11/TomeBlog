@@ -45,7 +45,7 @@ router.post("/signup", async (req, res) => {
   const user = new User({ email, nickname, password });
   await user.save();
 
-  res.status(201).json({});
+  res.status(201).json({ message:"회원가입되었습니다."});
 });
 
 
